@@ -1,0 +1,14 @@
+{% extends "layout.slide.html" %} {% set body_class = "summary" %} {% block page
+%} {# Include the partial for the study design modal. #} {% include
+"modals/study-design-a.html" %}
+
+<style>
+  .img--content {
+    background-image: url(content10.png);
+  }
+</style>
+
+{# The primary slide content is in its content.png background image. #}
+<div class="img--content sprite layer"></div>
+
+{# Add a button to show the study design modal. #} {% endblock %}

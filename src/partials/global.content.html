@@ -1,0 +1,74 @@
+{# Establish some variables using values from config.global.json. These are
+entirely arbitrary, and solely used for this example IVA. #} {% set part_number
+= global__tokens__part_number %} {% set part_date = global__tokens__part_date %}
+{% set summary_slide_id = global__tokens__summary_slide_id %}
+
+<!-- begin: global.content.html -->
+
+{# Make the current slide's 'content.png' file the background image, if it
+exists. #}
+
+<header>
+  <div class="header-buttons">
+    <div
+      class="hamburger-btn sprite"
+      data-modal-active-classname="hamburger-active"
+      data-modal-trigger-open
+      data-modal-target=".hamburger-modal"
+    ></div>
+  </div>
+</header>
+
+{# Add the overlay element for all modals. DO NOT REMOVE. #}
+<div class="modal-overlay" data-modal-trigger-close></div>
+
+{# Include the global references modal. (This assumes we have a single global
+references modal. If not, you'll want to add the relevant modal in each slide's
+index.html file.) #} {# Add the global ISI modal. #}
+<!-- ISI modal. -->
+<div class="isi-modal sprite modal-hidden">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <!-- <div
+    class="vaxi-link sprite"
+    data-modal-active-classname="vaxi-active"
+    data-modal-trigger-open
+    data-modal-target=".vaxelis2-modal"
+  ></div> -->
+</div>
+<!--  PI modal. -->
+<div class="pi-modal sprite modal-hidden">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+<!--  Hamburger  modal. -->
+<div class="hamburger-modal sprite modal-hidden">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="parent-btn sprite"
+    data-modal-active-classname="isi-active"
+    data-modal-trigger-open
+    data-slide-target="2000"
+  ></div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-buttons">
+    <div
+      class="isi-btn sprite"
+      data-modal-active-classname="isi-active"
+      data-modal-trigger-open
+      data-modal-target=".isi-modal"
+    ></div>
+
+    <div
+      class="pi-btn sprite"
+      data-modal-active-classname="pi-active"
+      data-modal-trigger-open
+      data-modal-target=".pi-modal"
+    ></div>
+  </div>
+</footer>
+
+<div id="overlay"></div>
+
+<!-- end: global.content.html -->

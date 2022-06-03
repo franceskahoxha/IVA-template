@@ -1,0 +1,175 @@
+/**
+ * @file custom.brand.scss
+ *
+ * Specific rules for this brand's IVA.
+ *
+ * This file will ultimately live at: ./shared/styles.min.css
+ */
+
+body {
+  font-family: Arial;
+}
+
+// header
+header {
+  position: absolute;
+  display: block;
+  top: 0;
+  height: 55px;
+  width: 100%;
+  z-index: 100;
+  background-image: url("brand-example/media/Header.png");
+  background-size: 100% 100%;
+}
+
+/**
+ * Brand logo.
+ */
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  color: white;
+  width: 250px;
+  height: 103px;
+  right: 50px;
+  bottom: 0;
+  z-index: 1011;
+
+  /* Demonstrate how we reference an image in a library. */
+  background-image: url(./brand-example/media/brand-logo.png);
+}
+
+/**
+ * Footer
+ */
+footer {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  height: 51px;
+  width: 100%;
+  z-index: 100;
+  background-image: url("brand-example/media/footer.png");
+  background-size: 100% 100%;
+}
+.isi-btn {
+  width: 200px;
+  height: 20px;
+  bottom: 14px;
+  left: 71px;
+}
+.isi-modal {
+  left: 182px;
+  top: 558px;
+  position: absolute;
+  background-image: url("brand-example/media/isi-modal.png");
+  width: 210px;
+  height: 330px;
+  background-size: 100% 100%;
+}
+.pi-modal {
+  left: 402px;
+  top: 452px;
+  position: absolute;
+  background-image: url("brand-example/media/pi-modal.png");
+  width: 493px;
+  height: 540px;
+  background-size: 100% 100%;
+}
+
+.pi-btn {
+  width: 164px;
+  height: 20px;
+  bottom: 14px;
+  left: 30%;
+}
+.hamburger-btn {
+  width: 40px;
+  height: 32px;
+  top: 10px;
+  right: 15px;
+}
+.hamburger-modal {
+  left: 798px;
+  top: 245px;
+  position: absolute;
+  background-image: url("brand-example/media/Hamburger-modal.png");
+  width: 440px;
+  height: 410px;
+  background-size: 100% 100%;
+}
+
+.parent-btn {
+  background-color: red;
+  width: 53%;
+  height: 40px;
+  top: 11%;
+  right: 46%;
+}
+
+/**
+ * Content
+ */
+.img--content {
+  background-image: url(content.png);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.nowrap {
+  white-space: nowrap;
+}
+ß
+
+/**
+ * Modal content.
+ */
+.modal-container {
+  padding: 1em;
+  background-color: #ffffff;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  width: 614px;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.modal-container h2 {
+  text-transform: uppercase;
+}
+.modal-button-close {
+  display: block;
+  width: 44px;
+  height: 44px;
+  background-image: none;
+  z-index: 99999;
+}
+
+/**
+ * Modal overlay.
+ * This is defined in boilerplate.modal.less. If we need to change the overlay
+ * colour/opacity that appears when a modal is displayed, change it here.
+ */
+.modal-overlay {
+  margin-top: 5%;
+  height: 87%;
+  background-color: rgba(0, 0, 0, 0);
+}
+// .isi-active .modal-overlay {
+//   background-color: rgba(0, 0, 0, 0);
+// }
+// .pi-active .modal-overlay {
+//   background-color: rgba(0, 0, 0, 0);
+// }
+// .hamburger-active .modal-overlay {
+//   background-color: rgba(0, 0, 0, 0);
+// }
+
+.isi-modal.modal-visible {
+  z-index: 0;
+}

@@ -1,0 +1,61 @@
+{% extends "layout.slide.html" %}
+
+{% set body_class = "summary" %}
+
+
+{% block page %}
+
+{#
+  Include the partial for the study design modal.
+#}
+{% include "modals/study-design-a.html" %}
+
+<style>
+
+.img--content {
+    background-image: url(content5.png);
+  }
+
+  .ref-btn {
+width: 45px;
+height: 40px;
+bottom: 183px;
+right: 0;
+z-index: 100;
+}
+
+.references-modal {
+position: absolute;
+background-image: url(ReferenceOverlays5.png);
+width: 100%;
+height: 100%;
+background-size: 100% 100%;
+}
+.references-modal .modal-button-close{
+  top: 30%;
+  right: 21%;
+  
+}
+</style>
+
+
+{#
+  The primary slide content is in its content.png background image.
+#}
+
+<!-- Reference modal -->
+<div class="references-modal">
+    <a class="modal-button-close" data-modal-trigger-close></a>
+  </div>
+  
+  
+  <div class="img--content sprite layer"></div>
+  <div class="ref-btn sprite" data-modal-trigger-open data-modal-target=".references-modal"></div>
+
+
+{#
+  Add a button to show the study design modal.
+#}
+
+
+{% endblock %}

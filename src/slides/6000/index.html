@@ -1,0 +1,601 @@
+{% extends "layout.slide.html" %} {% set body_class = "summary" %} {% block page
+%} {# Include the partial for the study design modal. #} {% include
+"modals/study-design-a.html" %}
+
+<style>
+  .img--content {
+    background-image: url(content6.png);
+  }
+
+  .ref-btn {
+    width: 45px;
+    height: 40px;
+    bottom: 183px;
+    right: 0;
+    z-index: 100;
+  }
+
+  .references-modal {
+    position: absolute;
+    background-image: url(ReferenceOverlays6.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+
+  .references-modal .modal-button-close {
+    top: 30%;
+    right: 21%;
+  }
+
+  .footnote-btn {
+    width: 45px;
+    height: 40px;
+    bottom: 31%;
+    right: 0;
+  }
+
+  .footnote-modal {
+    position: absolute;
+    background-image: url(Footnote6.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+
+  .footnote-modal .modal-button-close {
+    top: 30%;
+    right: 21%;
+  }
+
+  .vaxelis-btn {
+    width: 128px;
+    height: 90px;
+    top: 40%;
+    left: 32%;
+  }
+
+  .pentacel-btn {
+    width: 93px;
+    height: 65px;
+    top: 43%;
+    left: 52%;
+  }
+  .quadracel-btn {
+    width: 65px;
+    height: 50px;
+    top: 43%;
+    right: 25%;
+  }
+  .fluzone-btn {
+    width: 54%;
+    height: 25px;
+    top: 57%;
+    left: 40%;
+  }
+  .men-btn {
+    width: 17%;
+    height: 22px;
+    bottom: 26%;
+    right: 6%;
+  }
+  .adacel-btn {
+    width: 21%;
+    height: 20px;
+    bottom: 23%;
+    right: 6%;
+  }
+
+  .vaxelis-modal {
+    position: absolute;
+    background-image: url(Overlays6.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+
+  .vaxelis-modal .modal-button-close {
+    top: 6%;
+    right: 4%;
+  }
+
+  .next-1-btn,
+  .next-2-btn,
+  .next-3-btn,
+  .next-4-btn,
+  .next-5-btn,
+  .next-6-btn,
+  .next-7-btn,
+  .next-8-btn {
+    width: 38px;
+    height: 43px;
+    top: 47%;
+    right: 2%;
+  }
+
+  .next-1-modal {
+    background-image: url(Overlays6.2.png);
+  }
+
+  .next-1-modal,
+  .next-2-modal,
+  .next-3-modal,
+  .next-4-modal,
+  .next-5-modal,
+  .next-6-modal,
+  .next-7-modal,
+  .next-8-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+
+  .next-1-modal .modal-button-close,
+  .next-2-modal .modal-button-close,
+  .next-3-modal .modal-button-close,
+  .next-4-modal .modal-button-close,
+  .next-5-modal .modal-button-close,
+  .next-6-modal .modal-button-close,
+  .next-7-modal .modal-button-close,
+  .next-8-modal .modal-button-close {
+    top: 6%;
+    right: 4%;
+  }
+
+  .next-2-modal {
+    background-image: url(Overlays6.3.png);
+  }
+  .next-3-modal {
+    background-image: url(Overlays6.4.png);
+  }
+
+  .next-4-modal {
+    background-image: url(Overlays6.5.png);
+  }
+
+  .next-5-modal {
+    background-image: url(Overlays6.6.png);
+  }
+
+  .next-6-modal {
+    background-image: url(Overlays6.7.png);
+  }
+
+  .next-7-modal {
+    background-image: url(Overlays6.8.png);
+  }
+
+  .next-8-modal {
+    background-image: url(Overlays6.9.png);
+  }
+  .previous-1-btn,
+  .previous-2-btn,
+  .previous-3-btn,
+  .previous-4-btn,
+  .previous-5-btn,
+  .previous-6-btn,
+  .previous-7-btn,
+  .previous-8-btn {
+    width: 38px;
+    height: 43px;
+    top: 47%;
+    left: 2%;
+  }
+
+  .vaxelis2-btn {
+    width: 14%;
+    height: 12%;
+    top: 17%;
+    left: 3%;
+  }
+  .quadracel2-btn {
+    width: 14%;
+    height: 12%;
+    top: 17%;
+    left: 19%;
+  }
+  .pentacel2-btn {
+    width: 14%;
+    height: 12%;
+    top: 17%;
+    left: 34%;
+  }
+  .fluzone2-btn {
+    width: 14%;
+    height: 12%;
+    top: 17%;
+    left: 68%;
+  }
+  .men2-btn {
+    width: 14%;
+    height: 12%;
+    top: 17%;
+    right: 2%;
+  }
+  .adacel2-btn {
+    width: 18%;
+    height: 12%;
+    top: 17%;
+    left: 49%;
+  }
+
+  .subpage-1-btn,
+  .subpage-3-btn {
+    width: 26%;
+    height: 6%;
+    top: 19.4%;
+    right: 32.4%;
+  }
+
+  .subpage-2-btn,
+  .subpage-4-btn {
+    width: 26%;
+    height: 6%;
+    top: 19.4%;
+    right: 6.3%;
+  }
+  /* ISI links and modals */
+  .vaxelis2-modal,
+  .pentacel2-modal,
+  .quadracel2-modal,
+  .adacel2-modal,
+  .men2-modal,
+  .fluzone2-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+  .vaxelis2-modal {
+    background-image: url(vaxelisOverlay.png);
+  }
+  .pentacel2-modal {
+    background-image: url(pentacelOverlays.png);
+  }
+  .quadracel2-modal {
+    background-image: url(quadracelOverlays.png);
+  }
+  .adacel2-modal {
+    background-image: url(adacelOverlays.png);
+  }
+  .men2-modal {
+    background-image: url(menOverlays.png);
+  }
+  .fluzone2-modal {
+    background-image: url(fluzoneOverlays.png);
+  }
+  .vaxelis2-modal .modal-button-close,
+  .pentacel2-modal .modal-button-close,
+  .adacel2-modal .modal-button-close,
+  .quadracel2-modal .modal-button-close,
+  .men2-modal .modal-button-close,
+  .fluzone2-modal .modal-button-close {
+    top: 9%;
+    right: 7%;
+  }
+  .snapshot {
+    height: 83%;
+    width: 53%;
+    position: absolute;
+    right: 6%;
+    top: 8%;
+  }
+  .btn-1,
+  .btn-2 {
+    position: absolute;
+    top: 14.5%;
+    width: 47%;
+    height: 7%;
+  }
+  .btn-1 {
+    right: 49%;
+  }
+  .btn-2 {
+    right: 3%;
+  }
+  .tabs {
+    top: 6.5%;
+    height: 87%;
+    width: 56%;
+    right: 5%;
+  }
+  .tab-1 {
+    background-image: url(SnapshotPrimary.png);
+  }
+  .tab-2 {
+    background-image: url(SnapshotSecondary.png);
+  }
+  .hidden {
+    display: none;
+    visibility: hidden;
+  }
+</style>
+
+{# The primary slide content is in its content.png background image. #}
+
+<div class="img--content sprite layer"></div>
+
+<!-- Reference modal -->
+<div class="references-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div
+  class="ref-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".references-modal"
+></div>
+
+<!-- Vaxelis modal -->
+<div class="vaxelis-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+
+  <div
+    class="next-1-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-1-modal"
+  ></div>
+</div>
+
+<!--  vaccine buttons  -->
+<div
+  class="vaxelis-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".vaxelis-modal"
+></div>
+<div
+  class="pentacel-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".next-1-modal"
+></div>
+<div
+  class="quadracel-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".next-2-modal"
+></div>
+<div
+  class="fluzone-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".next-3-modal"
+></div>
+<div
+  class="men-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".next-4-modal"
+></div>
+<div
+  class="adacel-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".next-8-modal"
+></div>
+
+<div
+  class="vaxelis2-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".vaxelis2-modal"
+></div>
+<div
+  class="pentacel2-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".pentacel2-modal"
+></div>
+<div
+  class="quadracel2-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".quadracel2-modal"
+></div>
+<div
+  class="fluzone2-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".fluzone2-modal"
+></div>
+<div
+  class="men2-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".men2-modal"
+></div>
+<div
+  class="adacel2-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".adacel2-modal"
+></div>
+
+<!-- Next 1 modal-->
+<div class="next-1-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="next-2-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-2-modal"
+  ></div>
+  <div
+    class="previous-1-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".vaxelis-modal"
+  ></div>
+</div>
+
+<!-- Next 2 modal -->
+<div class="next-2-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="next-3-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-3-modal"
+  ></div>
+  <div
+    class="previous-2-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-1-modal"
+  ></div>
+</div>
+
+<!-- Next 3 modal -->
+<div class="next-3-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="next-4-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-4-modal"
+  ></div>
+  <div
+    class="previous-3-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-2-modal"
+  ></div>
+</div>
+
+<!-- Next 4 modal -->
+<div class="next-4-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <img src="SnapshotPrimary.png" class="snapshot" />
+  <div class="tabs sprite">
+    <div class="btn-1"></div>
+    <div class="btn-2"></div>
+  </div>
+  <div
+    class="next-5-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-6-modal"
+  ></div>
+  <div
+    class="previous-4-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-3-modal"
+  ></div>
+</div>
+
+<!-- Next 5 modal -->
+<div class="next-5-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="next-6-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-6-modal"
+  ></div>
+  <div
+    class="previous-5-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-3-modal"
+  ></div>
+  <div
+    class="subpage-1-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-4-modal"
+  ></div>
+  <div
+    class="subpage-2-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-5-modal"
+  ></div>
+</div>
+
+<!-- Next 6 modal -->
+<div class="next-6-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="next-7-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-8-modal"
+  ></div>
+  <div
+    class="previous-6-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-4-modal"
+  ></div>
+  <div
+    class="subpage-3-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-6-modal"
+  ></div>
+  <div
+    class="subpage-4-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-7-modal"
+  ></div>
+</div>
+
+<!-- Next 7 modal -->
+<div class="next-7-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="next-8-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-8-modal"
+  ></div>
+  <div
+    class="previous-7-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-4-modal"
+  ></div>
+  <div
+    class="subpage-3-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-6-modal"
+  ></div>
+  <div
+    class="subpage-4-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-7-modal"
+  ></div>
+</div>
+
+<!-- Next 8 modal -->
+<div class="next-8-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+  <div
+    class="next-9-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-9-modal"
+  ></div>
+  <div
+    class="previous-8-btn sprite"
+    data-modal-trigger-open
+    data-modal-target=".next-6-modal"
+  ></div>
+</div>
+
+<!-- Footnote modal -->
+<div class="footnote-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+<div
+  class="footnote-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".footnote-modal"
+></div>
+
+<!-- Vaxelis2 modal -->
+<div class="vaxelis2-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<!-- Pentacel2 modal -->
+<div class="pentacel2-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<!-- Quadracel2 modal -->
+<div class="quadracel2-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<!-- Fluzone2 modal -->
+<div class="fluzone2-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<!-- Men2 modal -->
+<div class="men2-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<!-- Adacel2 modal -->
+<div class="adacel2-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<script src="custom.6000.js"></script>
+
+{# Add a button to show the study design modal. #} {% endblock %}

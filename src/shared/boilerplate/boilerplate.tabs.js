@@ -1,0 +1,2 @@
+/* dist/boilerplate.tabs.js v1.0.2 Mon Jan 17 2022 10:49:28 GMT-0500 (Eastern Standard Time) */
+var iva_tabs=function(i){var t=function(){i("[data-tab-id]").hammer().bind("tap",function(t){var a=i(this).attr("data-tab-id");i("[data-tab]").attr("data-tab",a)})},a={};return a.init=function(){t()},a}(jQuery);jQuery(document).ready(function(){iva_tabs.init()});

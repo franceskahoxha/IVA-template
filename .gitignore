@@ -1,0 +1,18 @@
+# Temporary files
+*.swp
+*.swo
+thumbs.db
+Thumbs.db
+.DS_Store
+node_modules/
+desktop.ini
+.sass-cache
+*~
+desktop.ini
+
+
+# Distribution files
+dist
+
+# Credentials
+secret.json

@@ -1,0 +1,44 @@
+{% extends "layout.slide.html" %} {% set body_class = "summary" %} {% block page
+%} {# Include the partial for the study design modal. #} {% include
+"modals/study-design-a.html" %}
+
+<style>
+  .img--content {
+    background-image: url(content8.png);
+  }
+
+  .footnote-btn {
+    width: 45px;
+    height: 40px;
+    bottom: 31%;
+    right: 0;
+  }
+
+  .footnote-modal {
+    position: absolute;
+    background-image: url(Footnote8.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+
+  .footnote-modal .modal-button-close {
+    top: 30%;
+    right: 21%;
+  }
+</style>
+
+{# The primary slide content is in its content.png background image. #}
+<div class="img--content sprite layer"></div>
+
+<!-- Footnote modal -->
+<div class="footnote-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+<div
+  class="footnote-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".footnote-modal"
+></div>
+
+{# Add a button to show the study design modal. #} {% endblock %}

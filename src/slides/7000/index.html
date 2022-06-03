@@ -1,0 +1,86 @@
+{% extends "layout.slide.html" %} {% set body_class = "summary" %} {% block page
+%} {# Include the partial for the study design modal. #} {% include
+"modals/study-design-a.html" %}
+
+<style>
+  .img--content {
+    background-image: url(content7.png);
+  }
+  .vi-btn,
+  .reco-btn,
+  .pa-btn {
+    width: 35%;
+    height: 50px;
+    top: 38%;
+    right: 8%;
+  }
+
+  .vi-modal {
+    position: absolute;
+    background-image: url(Overlays7.1.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+  .vi-modal .modal-button-close,
+  .reco-modal .modal-button-close,
+  .pa-modal .modal-button-close {
+    top: 7%;
+    right: 6%;
+  }
+  .reco-btn {
+    top: 50%;
+  }
+  .reco-modal {
+    position: absolute;
+    background-image: url(Overlays7.2.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+  .pa-btn {
+    top: 62%;
+  }
+  .pa-modal {
+    position: absolute;
+    background-image: url(Overlays7.3.png);
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+</style>
+
+{# The primary slide content is in its content.png background image. #}
+<div class="img--content sprite layer"></div>
+<!-- VI modal -->
+<div class="vi-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div
+  class="vi-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".vi-modal"
+></div>
+<!-- Reco modal -->
+<div class="reco-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div
+  class="reco-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".reco-modal"
+></div>
+<!-- PA modal -->
+<div class="pa-modal">
+  <a class="modal-button-close" data-modal-trigger-close></a>
+</div>
+
+<div
+  class="pa-btn sprite"
+  data-modal-trigger-open
+  data-modal-target=".pa-modal"
+></div>
+
+{# Add a button to show the study design modal. #} {% endblock %}
